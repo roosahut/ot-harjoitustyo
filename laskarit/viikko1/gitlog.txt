@@ -1,0 +1,113 @@
+commit c5177ed42acc1e390595ded0dd60213c1205b7c8
+Author: Roosa Huttunen <huttunenroosa00@gmail.com>
+Date:   Mon Mar 21 03:14:01 2022 +0200
+
+    file1 poisto, file2 uusi nimi file22
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 2185be00b21e9e405d7d7a4338732c268f3525d1
+Author: Roosa Huttunen <huttunenroosa00@gmail.com>
+Date:   Mon Mar 21 03:01:55 2022 +0200
+
+    uusi kansio tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 6281bfa45365fb644992c909d4d0b349f2439802
+Author: Roosa Huttunen <huttunenroosa00@gmail.com>
+Date:   Mon Mar 21 02:53:14 2022 +0200
+
+    muutoksia ekaan ja kolmanteen
+
+ eka.txt    | 2 +-
+ kolmas.txt | 3 ++-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit e5db30a14f3e4f5d18fb6f1ada33ad4ee0777cf3
+Author: Roosa Huttunen <huttunenroosa00@gmail.com>
+Date:   Mon Mar 21 02:48:32 2022 +0200
+
+    tiedosto.txt nimen muutos eka.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit dfb9a3a84ff42e25dfb71a4d92cdb15df9de302a
+Author: Roosa Huttunen <huttunenroosa00@gmail.com>
+Date:   Mon Mar 21 02:45:56 2022 +0200
+
+    toinen.txt poistaminen
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 35c477df536dffd8f1fdd58ada8eee9e550e8f15
+Author: Roosa Huttunen <huttunenroosa00@gmail.com>
+Date:   Mon Mar 21 02:42:50 2022 +0200
+
+    poisto ja lisäys tiedosto.txt
+
+ tiedosto.txt | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+commit a1bd279d1940278d3bd3cd16e311286a75df8b84
+Author: Roosa Huttunen <huttunenroosa00@gmail.com>
+Date:   Mon Mar 21 02:40:59 2022 +0200
+
+    lisäys tiedosto.txtään
+
+ tiedosto.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 23660251614a7484ee6de484f02dac5dde12b10b
+Author: Roosa Huttunen <huttunenroosa00@gmail.com>
+Date:   Mon Mar 21 02:34:18 2022 +0200
+
+    muutoksia tokaan ja kolmanteen
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit a58eacac68d07540cd6eb85ede90bd2787ff272f
+Author: Roosa Huttunen <huttunenroosa00@gmail.com>
+Date:   Mon Mar 21 02:30:53 2022 +0200
+
+    kansion stuff lisäys
+
+ stuff/jokin.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 7dba3ac36b28df7b66f6f888ad577af8c49269aa
+Author: Roosa Huttunen <huttunenroosa00@gmail.com>
+Date:   Mon Mar 21 02:29:14 2022 +0200
+
+    kolmas.txt lisäys
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit e6ff9c82aac3b8787afd688021ba38726414e92a
+Author: Roosa Huttunen <huttunenroosa00@gmail.com>
+Date:   Mon Mar 21 02:25:40 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit d96b04244529b8260117cb96c5d5706eea2cd939
+Author: Roosa Huttunen <huttunenroosa00@gmail.com>
+Date:   Mon Mar 21 02:22:34 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
