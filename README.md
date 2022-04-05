@@ -24,7 +24,7 @@ poetry run invoke test
 testikattavuuden saa komennolla
 ```
 poetry run invoke coverage-report
-``
+```
 
 ## Dokumentaatio
 [vaatimusmäärittely](https://github.com/roosahut/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
