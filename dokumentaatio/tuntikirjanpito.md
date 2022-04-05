@@ -6,4 +6,4 @@
 | 4.4           | 1             | pygamen käyttöönotto               |
 | 5.4           | 3             | get_sentence() funktion toiminta   |
 |               |               | ja testaus                         |
-| yht           | 0.5           |
+| yht           | 4.5           |
