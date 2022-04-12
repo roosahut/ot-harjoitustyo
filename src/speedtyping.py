@@ -26,8 +26,7 @@ class SpeedTyping:
                 if self.input[input_counter] == i:
                     counter += 1
             input_counter += 1
-        n = len(self.sentence)
-        accuracy = (counter/n) * 100
+        accuracy = (counter/len(self.sentence)) * 100
         wpm = len(self.input)*60/(self.words*timer)
         return f"Time: {round(timer, 1)} s  Accuracy: {round(accuracy)} %  WPM: {round(wpm)}"
 

@@ -41,21 +41,21 @@ def main():
                             screen.start_time = time.time()
                         screen.input += event.unicode
             display.fill(0)
-            sentence_input, xy_sentence = screen.center_text(screen.sentence, 200)
+            sentence_input, xy_sentence = screen.center_text(screen.sentence, 175)
             display.blit(sentence_input, xy_sentence)
-            text_input, xy_text = screen.center_text(screen.input, 300)
+            text_input, xy_text = screen.center_text(screen.input, 250)
             display.blit(text_input, xy_text)
             if end == False:
-                start_text, xy_start = screen.center_text("Start typing!", 250)
+                start_text, xy_start = screen.center_text("Start typing the given sentence, press enter to finish", 100)
                 display.blit(start_text, xy_start)
             if end == True:
                 pygame.draw.rect(display, blue, pygame.Rect(325, 385, 100, 100))
-                playagain_text, xy_playagain = screen.center_text("Click reset to play again", 250)
+                playagain_text, xy_playagain = screen.center_text("Click reset to play again", 100)
                 display.blit(playagain_text, xy_playagain)
                 reset, xy_reset = screen.center_text("Reset", 435)
                 display.blit(reset, xy_reset)
                 result = screen.results()
-                text_result, xy_result = screen.center_text(result, 350)
+                text_result, xy_result = screen.center_text(result, 325)
                 display.blit(text_result, xy_result)
             pygame.display.flip()
 
