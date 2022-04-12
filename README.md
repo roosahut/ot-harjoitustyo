@@ -1,6 +1,6 @@
 # Speed Typing Test
 
-Sovelluksen tarkoituksena on testata pelaajan kirjoitusnopeutta ja -tarkkuutta. Vielä sovelluksessa ei ole erityisesti mitään "pelattavaa", vaan tällä hetkellä aukeaa vain pygame-näyttö, johon tulee satunnaisesti valittu lause sentences.txt - tiedostosta.
+Sovelluksen tarkoituksena on testata pelaajan kirjoitusnopeutta ja -tarkkuutta.
 
 ## Sovelluksen käynnistys
 1. riippuvuudet komennolla
