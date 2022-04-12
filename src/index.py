@@ -1,6 +1,7 @@
-import pygame
 import time
+import pygame
 from speedtyping import SpeedTyping
+
 
 def main():
     pygame.init()
@@ -17,10 +18,10 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit()
-            if end == True:
+            if end is True:
                 if event.type == pygame.MOUSEBUTTONUP:
-                    x, y = pygame.mouse.get_pos()
-                    if x >= 325 and x <= 425 and y >= 385 and y <= 485:
+                    x_pos, y_pos = pygame.mouse.get_pos()
+                    if x_pos >= 325 and x_pos <= 425 and y_pos >= 385 and y_pos <= 485:
                         screen.reset()
                         end = False
             elif event.type == pygame.KEYDOWN:
@@ -41,16 +42,20 @@ def main():
                             screen.start_time = time.time()
                         screen.input += event.unicode
             display.fill(0)
-            sentence_input, xy_sentence = screen.center_text(screen.sentence, 175)
+            sentence_input, xy_sentence = screen.center_text(
+                screen.sentence, 175)
             display.blit(sentence_input, xy_sentence)
             text_input, xy_text = screen.center_text(screen.input, 250)
             display.blit(text_input, xy_text)
-            if end == False:
-                start_text, xy_start = screen.center_text("Start typing the given sentence, press enter to finish", 100)
+            if end is False:
+                start_text, xy_start = screen.center_text(
+                    "Start typing the given sentence, press enter to finish", 100)
                 display.blit(start_text, xy_start)
-            if end == True:
-                pygame.draw.rect(display, blue, pygame.Rect(325, 385, 100, 100))
-                playagain_text, xy_playagain = screen.center_text("Click reset to play again", 100)
+            if end is True:
+                pygame.draw.rect(
+                    display, blue, pygame.Rect(325, 385, 100, 100))
+                playagain_text, xy_playagain = screen.center_text(
+                    "Click reset to play again", 100)
                 display.blit(playagain_text, xy_playagain)
                 reset, xy_reset = screen.center_text("Reset", 435)
                 display.blit(reset, xy_reset)
@@ -58,6 +63,7 @@ def main():
                 text_result, xy_result = screen.center_text(result, 325)
                 display.blit(text_result, xy_result)
             pygame.display.flip()
+
 
 if __name__ == "__main__":
     main()
