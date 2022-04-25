@@ -1,4 +1,5 @@
 import time
+import sys
 import pygame
 
 
@@ -18,11 +19,11 @@ class GameLoop:
             clock.tick(60)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    exit()
+                    sys.exit()
                 if event.type == pygame.MOUSEBUTTONUP:
-                        x_pos, y_pos = pygame.mouse.get_pos()
-                        if x_pos >= 600 and x_pos <= 740 and y_pos >= 10 and y_pos <= 55:
-                            self.change_mode()
+                    x_pos, y_pos = pygame.mouse.get_pos()
+                    if x_pos >= 600 and x_pos <= 740 and y_pos >= 10 and y_pos <= 55:
+                        self.change_mode()
                 if self.end is True:
                     if event.type == pygame.MOUSEBUTTONUP:
                         x_pos, y_pos = pygame.mouse.get_pos()
@@ -48,9 +49,9 @@ class GameLoop:
                             self.screen.input += event.unicode
                 self.display.fill(self.mode)
                 pygame.draw.rect(
-                        self.display, blue, pygame.Rect(600, 10, 140, 45))
+                    self.display, blue, pygame.Rect(600, 10, 140, 45))
                 changemode_text = self.get_text("Change mode")
-                self.display.blit(changemode_text, (603,15))
+                self.display.blit(changemode_text, (603, 15))
                 sentence_input, xy_sentence = self.center_text(
                     self.screen.sentence, 175)
                 self.display.blit(sentence_input, xy_sentence)
