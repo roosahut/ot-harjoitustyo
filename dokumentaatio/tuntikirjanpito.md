@@ -10,4 +10,9 @@
 | 12.4          | 2.5           | lisää toiminnallisuutta            |
 |               | 3             | testin lisäys, koodin laadun       |
 |               |               | kehitys ja pylint                  |
-| yht           | 12.5          |
+| 20.4          | 2             | change mode -toiminto              |
+|               |               | ja parannuksia rakenteeseen        |
+| 25.4          | 1.5           | lisää testejä                      |
+| 26.4          | 3.5           | gameloop -luokan parantamista ja   |
+|               |               | start -luokan tekeminen            |
+| yht           | 19.5          |
