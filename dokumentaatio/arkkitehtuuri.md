@@ -2,14 +2,30 @@
 
 ```mermaid
  classDiagram
+      Start --> GameLoop
       GameLoop --> SpeedTyping
-      class GameLoop{
+      SpeedTyping --> GetSentence
+      class Start{
           start()
+      }
+      class GameLoop{
+          loop()
       }
       class SpeedTyping{
           results()
-          get_sentence()
-          center_text()
           reset()
       }
+      class GetSentence{
+           get_sentence()
+      }
+```
+
+## Sekvenssikaavio
+
+```mermaid
+sequenceDiagram
+     main()->>SpeedTyping: screen
+     main()->>Start: start()
+     Start->>GameLoop: loop()
+     SpeedTyping->>GetSentence: get_sentence()
 ```
