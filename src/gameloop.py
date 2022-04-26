@@ -12,7 +12,7 @@ class GameLoop:
         self.text_colour = (255, 255, 255)
         self.end = False
 
-    def start(self):
+    def loop(self):
         while True:
             self.clock.tick(60)
             for event in pygame.event.get():
@@ -71,9 +71,9 @@ class GameLoop:
                     self.screen.words += 1
 
     def check_xy(self, x, y):  # pylint: disable=invalid-name
-        if x >= 600 and x <= 740 and y >= 10 and y <= 55:
+        if 600 <= x <= 740 and 10 <= y <= 55:
             self.change_mode()
-        if x >= 325 and x <= 425 and y >= 385 and y <= 485 and self.end is True:
+        if 325 <= x <= 425 and 385 <= y <= 485 and self.end is True:
             self.screen.reset()
             self.end = False
 

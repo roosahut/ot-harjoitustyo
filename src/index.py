@@ -1,6 +1,6 @@
 import pygame
 from speedtyping import SpeedTyping
-from gameloop import GameLoop
+from start import Start
 
 
 def main():
@@ -9,7 +9,7 @@ def main():
     pygame.display.set_caption("Speed Typing Test")
     screen = SpeedTyping()
 
-    gameloop = GameLoop(screen, display)
+    gameloop = Start(screen, display)
     gameloop.start()
 
 
