@@ -6,10 +6,11 @@ Tämän jälkeen näytetään kauan kesti, kuinka oikein se meni, sekä kirjoitu
 ## Käyttäjät
 Yksi käyttäjä eli pelaaja.
 ## Perusversion tarjoama toiminnallisuus
-- Pelaaja näkee aluksi aloitusnäytön, josta aloittaa pelin. 
+- Pelaaja näkee aluksi aloitusnäytön, josta aloittaa pelin. (tehty)
 - Pelin aloituksen jälkeen seuraavassa ikkunassa on lause/sana, joka pelaajan tulee kirjoittaa. (tehty)
 - Tämän jälkeen jälkeen pelaajalle tulee tieto siitä, miten kirjoitus meni. (tehty)
 - Tämän jälkeen pelaaja voi nappia painamalla tehdä uuden pelin, jossa on eri lause/sana testissä. (tehty)
+- Pelaaja pystyy pelatessa vaihtamaan pelin 'modea' joko vaaleaksi tai tummaksi 'Change mode' napin avulla. (tehty)
 ## Jatkokehitysideoita
 - mahdollisuus valita vaikeustaso
 - ohjelma näyttäisy kirjotuksen jälkeen vihrealla oikein menneet sanat ja punaisella väärin menneet sanat
