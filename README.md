@@ -39,6 +39,8 @@ poetry run invoke lint
 
 [arkkitehtuuri](https://github.com/roosahut/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+[käyttöohje](https://github.com/roosahut/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
 ## Releaset
 
 [viikon 5 release](https://github.com/roosahut/ot-harjoitustyo/releases/tag/viikko5)
