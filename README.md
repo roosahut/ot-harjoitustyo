@@ -44,3 +44,5 @@ poetry run invoke lint
 ## Releaset
 
 [viikon 5 release](https://github.com/roosahut/ot-harjoitustyo/releases/tag/viikko5)
+
+[viikon 6 release](https://github.com/roosahut/ot-harjoitustyo/releases/tag/viikko6)
