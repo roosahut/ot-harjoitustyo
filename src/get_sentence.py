@@ -1,11 +1,22 @@
 import random
 
+# Minulla on tarkoitus muuttaa tätä, niinkuin ohjaaja minua kehotti,
+# mutta valitettavasti en kerennyt tätä tehdä vielä :(
+
 
 class GetSentence:
-    def __init__(self):
-        pass
+    """Luokka, joka hakee kansioista lauseen randomilla.
+    """
 
     def get_sentence(self, mode):
+        """Funktio, joka avaa kansion, ja ottaa sieltä lauseen randomilla.
+
+        Args:
+            mode: Määrää, onko pelaaja valinnut normaalin vai vaikean tason.
+
+        Returns:
+            Palauttaa haetun lauseen, joka tulee kirjoittaa.
+        """
         if mode == 1:
             with open("src/sentences_normal.txt", encoding="utf-8") as file:
                 file = file.read()

@@ -2,7 +2,23 @@ from get_sentence import GetSentence
 
 
 class SpeedTyping:
+    """Luokka, joka pitää huolta yksittäisen pelin tekstistä ja tuloksista.
+
+    Attributes:
+        sentence_mode: Pelin vaikeustaso.
+        start_time: Alkaa, kun lausetta aletaan kirjoittamaan.
+        end_time: Aika, kun lauseen kirjoitus päättyy ja painetaan enter.
+        sentence: Yhteen peliin randomilla valittu lause.
+        input: Pelaajan kirjoittama teksti
+        words: Kuinka monta sanaa pelaajan kirjoittamassa tekstissä on.
+    """
+
     def __init__(self, sentence_mode):
+        """Konstruktori.
+
+        Args:
+            sentence_mode: Pelin vaikeustaso.
+        """
         self.start_time = 0
         self.end_time = 0
         self.sentence_mode = sentence_mode
@@ -11,6 +27,12 @@ class SpeedTyping:
         self.words = 1
 
     def results(self):
+        """Laskee pelaajan kirjoittaman lauseen nopeuden, oikeuden sekä
+        kuinka monta sanaa hän kirjoitti minuutissa.
+
+        Returns:
+            Palauttaa testin tulokset, jotka ilmestyvät peli ruudulle.
+        """
         timer = self.end_time - self.start_time
         input_counter = 0
         counter = 0
@@ -24,6 +46,8 @@ class SpeedTyping:
         return f"Time: {round(timer, 1)} s  Accuracy: {round(accuracy)} %  WPM: {round(wpm)}"
 
     def count_words(self):
+        """Laskee kuinka monta sanaa pelaajan kirjoittamassa lauseessa on.
+        """
         if len(self.input) == 0:
             self.words = 1
         else:
@@ -32,6 +56,8 @@ class SpeedTyping:
                     self.words += 1
 
     def reset(self):
+        """Asettaa pelin tiedot alusta, kun pelaaja painaa Reset-nappia.
+        """
         self.start_time = 0
         self.end_time = 0
         self.sentence = GetSentence().get_sentence(self.sentence_mode)
