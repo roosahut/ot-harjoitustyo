@@ -25,7 +25,7 @@ class GameLoop:
                     if not self.end:
                         if event.key == pygame.K_RETURN:
                             self.screen.end_time = time.time()
-                            self.count_words()
+                            self.screen.count_words()
                             self.end = True
                         elif event.key == pygame.K_BACKSPACE:
                             self.screen.input = self.screen.input[:-1]
@@ -37,41 +37,45 @@ class GameLoop:
 
     def draw_screen(self):
         self.display.fill(self.mode)
-        pygame.draw.rect(
-            self.display, (0, 0, 255), pygame.Rect(600, 10, 140, 45))
-        changemode_text = self.get_text("Change mode")
-        self.display.blit(changemode_text, (603, 15))
+
+        self.draw_colour_mode_button()
+
         sentence_input, xy_sentence = self.center_text(
             self.screen.sentence, 175)
         self.display.blit(sentence_input, xy_sentence)
         text_input, xy_text = self.center_text(self.screen.input, 250)
+
         self.display.blit(text_input, xy_text)
+
         if self.end is False:
             start_text, xy_start = self.center_text(
                 "Start typing the given sentence, press enter to finish", 100)
             self.display.blit(start_text, xy_start)
         if self.end is True:
-            pygame.draw.rect(
-                self.display, (0, 0, 255), pygame.Rect(325, 385, 100, 100))
-            playagain_text, xy_playagain = self.center_text(
-                "Click reset to play again", 100)
-            self.display.blit(playagain_text, xy_playagain)
-            reset, xy_reset = self.center_text("Reset", 435)
-            self.display.blit(reset, xy_reset)
-            result = self.screen.results()
-            text_result, xy_result = self.center_text(result, 325)
-            self.display.blit(text_result, xy_result)
+            self.draw_reset()
 
-    def count_words(self):
-        if len(self.screen.input) == 0:
-            self.screen.words = 1
-        else:
-            for i in self.screen.input:
-                if i == ' ':
-                    self.screen.words += 1
+    def draw_colour_mode_button(self):
+        pygame.draw.rect(
+            self.display, (0, 0, 255), pygame.Rect(540, 10, 205, 45))
+        changemode_text = self.get_text("Change colour mode")
+        self.display.blit(changemode_text, (543, 15))
+
+    def draw_reset(self):
+        reset, xy_reset = self.center_text("Reset", 435)
+        self.display.blit(reset, xy_reset)
+        pygame.draw.rect(
+            self.display, (0, 0, 255), pygame.Rect(325, 385, 100, 100))
+
+        playagain_text, xy_playagain = self.center_text(
+            "Click reset to play again", 100)
+        self.display.blit(playagain_text, xy_playagain)
+
+        result = self.screen.results()
+        text_result, xy_result = self.center_text(result, 325)
+        self.display.blit(text_result, xy_result)
 
     def check_xy(self, x, y):  # pylint: disable=invalid-name
-        if 600 <= x <= 740 and 10 <= y <= 55:
+        if 540 <= x <= 745 and 10 <= y <= 55:
             self.change_mode()
         if 325 <= x <= 425 and 385 <= y <= 485 and self.end is True:
             self.screen.reset()

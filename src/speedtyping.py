@@ -23,6 +23,14 @@ class SpeedTyping:
         wpm = len(self.input)*60/(self.words*timer)
         return f"Time: {round(timer, 1)} s  Accuracy: {round(accuracy)} %  WPM: {round(wpm)}"
 
+    def count_words(self):
+        if len(self.input) == 0:
+            self.words = 1
+        else:
+            for i in self.input:
+                if i == ' ':
+                    self.words += 1
+
     def reset(self):
         self.start_time = 0
         self.end_time = 0
