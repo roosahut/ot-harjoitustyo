@@ -15,4 +15,7 @@
 | 25.4          | 1.5           | lisää testejä                      |
 | 26.4          | 3.5           | gameloop -luokan parantamista ja   |
 |               |               | start -luokan tekeminen            |
-| yht           | 19.5          |
+| 3.5           | 7             | poetryn korjaaminen                |
+|               | 2             | vaikeustasojen luominen peliin     |
+|               | 2             | testien ja docstring lisäystä      |
+| yht           | 30.5          |
