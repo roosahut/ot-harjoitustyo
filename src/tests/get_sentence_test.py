@@ -6,10 +6,14 @@ class TestGetSentence(unittest.TestCase):
     def setUp(self):
         self.screen = GetSentence()
 
-    def test_get_sentence(self):
-        # the file won't open without src/ for me, don't know if
-        # that's the case for everyone
-        file = open("src/sentences.txt").read()
+    def test_get_sentence_normal(self):
+        file = open("src/sentences_normal.txt").read()
         sentences = file.split("\n")
-        sentence = self.screen.get_sentence()
+        sentence = self.screen.get_sentence(1)
+        self.assertIn(sentence, sentences)
+
+    def test_get_sentence_hard(self):
+        file = open("src/sentences_hard.txt").read()
+        sentences = file.split("\n")
+        sentence = self.screen.get_sentence(2)
         self.assertIn(sentence, sentences)

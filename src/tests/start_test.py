@@ -1,5 +1,4 @@
 from start import Start
-from speedtyping import SpeedTyping
 import unittest
 import pygame
 
@@ -8,8 +7,7 @@ class TestGetSentence(unittest.TestCase):
     def setUp(self):
         pygame.init()
         display = pygame.display.set_mode((750, 500))
-        screen = SpeedTyping()
-        self.screen = Start(screen, display)
+        self.screen = Start(display)
 
     def test_center_text(self):
         self.screen.text_colour = (255, 255, 255)

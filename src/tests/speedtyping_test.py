@@ -4,7 +4,7 @@ import unittest
 
 class TestSpeedTyping(unittest.TestCase):
     def setUp(self):
-        self.screen = SpeedTyping()
+        self.screen = SpeedTyping(1)
 
     def test_results(self):
         self.screen.end_time = 2
@@ -26,4 +26,14 @@ class TestSpeedTyping(unittest.TestCase):
         self.assertEqual(self.screen.end_time, 0)
         self.assertEqual(self.screen.input, '')
         self.assertEqual(self.screen.words, 1)
+
+    def test_count_words_if_zero(self):
+        self.screen.input = ''
+        self.screen.count_words()
+        self.assertEqual(1, self.screen.words)
+
+    def test_count_words_if_not_zero(self):
+        self.screen.input = 'moi kiakki heh'
+        self.screen.count_words()
+        self.assertEqual(3, self.screen.words)
 
