@@ -2,10 +2,11 @@ from get_sentence import GetSentence
 
 
 class SpeedTyping:
-    def __init__(self):
+    def __init__(self, sentence_mode):
         self.start_time = 0
         self.end_time = 0
-        self.sentence = GetSentence().get_sentence()
+        self.sentence_mode = sentence_mode
+        self.sentence = GetSentence().get_sentence(self.sentence_mode)
         self.input = ''
         self.words = 1
 
@@ -25,6 +26,6 @@ class SpeedTyping:
     def reset(self):
         self.start_time = 0
         self.end_time = 0
-        self.sentence = GetSentence().get_sentence()
+        self.sentence = GetSentence().get_sentence(self.sentence_mode)
         self.input = ''
         self.words = 1
