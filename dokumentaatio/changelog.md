@@ -13,9 +13,17 @@
 - lisätty testi results() funktiota testaamaan
 - otettu pylint käyttöön ja korjattu koodia
 
-## Viikko5
+## Viikko 5
 - pelin teemaa pystyy vaihtelemaan vaalean ja tumman välillä 'Change mode' nappia painamalla
 - lisätty start- luokka, jonka avulla pelin aloittaessa käyttäjälle tulee ensin aloitusnäkymä, josta pelin voi aloittaa
 - eritylty get_sentence omaan luokkaan
 - parannettu GameLoop -luokan selkeyttä 
 - lisätty testejä
+
+## Viikko 6
+- suurin aika meni siihen, kun koneessani ei enää toiminut poetry, sillä päivitys oli jotenkin sekoittanut python yhteyksiäni, joten aikaa muuhun projektissa olennaiseen jäi harvinaisen vähän. En ollut varma tulisiko poetryn toimintaan käytetty aika merkitä tuntikirjanpitoon, joten toivon saavani tästä palautetta. Nyt se on siellä, mutta voin poistaa sen tarvittaessa.
+- peliin lisätty alkuun valinta, jossa voi valita vaikeustason
+- lisätty myös toinen sentences.text kansio, jossa vaikeampia lauseita (vielä vain aika vähän)
+- lisätty testejä hieman
+- parannettu koodin rakennetta
+- lisätty docstring suurimpaan osaan luokista
