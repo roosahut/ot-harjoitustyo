@@ -11,8 +11,8 @@ Yksi käyttäjä eli pelaaja.
 - Tämän jälkeen jälkeen pelaajalle tulee tieto siitä, miten kirjoitus meni. (tehty)
 - Tämän jälkeen pelaaja voi nappia painamalla tehdä uuden pelin, jossa on eri lause/sana testissä. (tehty)
 - Pelaaja pystyy pelatessa vaihtamaan pelin 'modea' joko vaaleaksi tai tummaksi 'Change mode' napin avulla. (tehty)
+- mahdollisuus valita vaikeustaso (tehty)
 ## Jatkokehitysideoita
-- mahdollisuus valita vaikeustaso
 - ohjelma näyttäisy kirjotuksen jälkeen vihrealla oikein menneet sanat ja punaisella väärin menneet sanat
 - peli sellaiseksi, että yhdessä pelissä on monta eri lausetta/sanaa, joiden kirjoittamisen oikeellisuudesta ja wpm lasketaan loppuun keskiarvo sekä arvio käyttäjän kirjoitustaidosta
 - peliin mahdollisuus luoda ja kirjautua käyttäjällä, ja nähdä omat vanhat tulokset
