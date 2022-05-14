@@ -1,6 +1,7 @@
 import time
 import sys
 import pygame
+from gameover import GameOver
 
 
 class GameLoop:
@@ -13,6 +14,7 @@ class GameLoop:
         mode: Pygamen näkymän taustaväri.
         text_colour: Pygamen näkymän tekstin väri.
         end: Onko yhden lauseen kirjoitus lopetettu vai ei.
+        game_timer: Aika sekunneissa, joka pelaajalla on kirjoittaa lauseita. Vähenee kokoajan.
     """
 
     def __init__(self, screen, display):
@@ -22,21 +24,28 @@ class GameLoop:
             screen: SpeedTyping-luokassa pohja kirjoitukselle ja tuloksille.
             display: Pygame näkymä
         """
-        self.clock = pygame.time.Clock()
+        self.pygame_clock = pygame.time.Clock()
         self.screen = screen
         self.display = display
         self.mode = (0)
         self.text_colour = (255, 255, 255)
         self.end = False
+        self.game_timer = 60
+        self.results = []
 
     def loop(self):
         """Pelin päälooppi, jossa kello käy, sekä tapahtumat kerätään ylös.
         """
+        pygame.time.set_timer(pygame.USEREVENT, 1000)
         while True:
-            self.clock.tick(60)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
+                if event.type == pygame.USEREVENT:
+                    self.game_timer -= 1
+                    if self.game_timer == 0:
+                        gameover = GameOver(self.display, self.results)
+                        gameover.gameover()
                 elif event.type == pygame.MOUSEBUTTONUP:
                     x, y = pygame.mouse.get_pos()  # pylint: disable=invalid-name
                     self.check_xy(x, y)
@@ -45,19 +54,28 @@ class GameLoop:
                         if event.key == pygame.K_RETURN:
                             self.screen.end_time = time.time()
                             self.screen.count_words()
+                            self.results.append(self.screen.results())
                             self.end = True
                         elif event.key == pygame.K_BACKSPACE:
                             self.screen.input = self.screen.input[:-1]
                         else:
                             self.start_time()
                             self.screen.input += event.unicode
+                    elif self.end:
+                        self.screen.reset()
+                        self.end = False
                 self.draw_screen()
                 pygame.display.flip()
+                self.pygame_clock.tick(60)
 
     def draw_screen(self):
         """Pelin päänäkymä, funktio piirtää lauseet ja napit tarpeen mukaan.
         """
+
         self.display.fill(self.mode)
+
+        gametimer_text = self.get_text(f'Time left: {self.game_timer} seconds')
+        self.display.blit(gametimer_text, (15, 15))
 
         self.draw_colour_mode_button()
 
@@ -86,16 +104,16 @@ class GameLoop:
     def draw_reset(self):
         """Funktio, joka piirtää näkymän siitä, kun pelaaja on valmis lauseen kirjoituksessa.
         """
-        reset, xy_reset = self.center_text("Reset", 435)
-        self.display.blit(reset, xy_reset)
         pygame.draw.rect(
             self.display, (0, 0, 255), pygame.Rect(325, 385, 100, 100))
+        reset, xy_reset = self.center_text("Reset", 435)
+        self.display.blit(reset, xy_reset)
 
         playagain_text, xy_playagain = self.center_text(
-            "Click reset to play again", 100)
+            "Click reset or any key to get the next sentence", 100)
         self.display.blit(playagain_text, xy_playagain)
 
-        result = self.screen.results()
+        result = self.screen.results_sentence()
         text_result, xy_result = self.center_text(result, 325)
         self.display.blit(text_result, xy_result)
 

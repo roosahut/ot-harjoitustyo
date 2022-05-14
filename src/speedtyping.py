@@ -43,7 +43,11 @@ class SpeedTyping:
             input_counter += 1
         accuracy = (counter/len(self.sentence)) * 100
         wpm = len(self.input)*60/(self.words*timer)
-        return f"Time: {round(timer, 1)} s  Accuracy: {round(accuracy)} %  WPM: {round(wpm)}"
+        return [round(timer, 1), round(accuracy), round(wpm)]
+
+    def results_sentence(self):
+        result = self.results()
+        return f"Time: {result[0]} s  Accuracy: {result[1]} %  WPM: {result[2]}"
 
     def count_words(self):
         """Laskee kuinka monta sanaa pelaajan kirjoittamassa lauseessa on.
