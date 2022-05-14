@@ -8,11 +8,12 @@ Yksi käyttäjä eli pelaaja.
 ## Perusversion tarjoama toiminnallisuus
 - Pelaaja näkee aluksi aloitusnäytön, josta aloittaa pelin. (tehty)
 - Pelin aloituksen jälkeen seuraavassa ikkunassa on lause/sana, joka pelaajan tulee kirjoittaa. (tehty)
-- Tämän jälkeen jälkeen pelaajalle tulee tieto siitä, miten kirjoitus meni. (tehty)
-- Tämän jälkeen pelaaja voi nappia painamalla tehdä uuden pelin, jossa on eri lause/sana testissä. (tehty)
-- Pelaaja pystyy pelatessa vaihtamaan pelin 'modea' joko vaaleaksi tai tummaksi 'Change mode' napin avulla. (tehty)
-- mahdollisuus valita vaikeustaso (tehty)
+- Tämän jälkeen jälkeen pelaajalle tulee tieto siitä, miten tämän lauseen kirjoitus meni. (tehty)
+- Tämän jälkeen pelaaja voi nappia painamalla ottaa uuden lauseen, jossa on eri lause testissä. (tehty)
+- Yksi peli on 60 sekuntia, ja pelaajan tulee kirjoittaa mahdollisimman paljon eri lauseita mahdollisimman hyvin tässä ajassa. (tehty)
+- Kun 60 sekuntia on kulunut, pelaaja näkee kirjoittamiensa lauseiden keskiarvo-tulokset. (tehty)
+- Pelaaja pystyy pelatessa vaihtamaan pelin 'modea' joko vaaleaksi tai tummaksi 'Change colour mode' napin avulla. (tehty)
+- Mahdollisuus valita vaikeustaso ennen aloitusnäyttöä. (tehty)
 ## Jatkokehitysideoita
 - ohjelma näyttäisy kirjotuksen jälkeen vihrealla oikein menneet sanat ja punaisella väärin menneet sanat
-- peli sellaiseksi, että yhdessä pelissä on monta eri lausetta/sanaa, joiden kirjoittamisen oikeellisuudesta ja wpm lasketaan loppuun keskiarvo sekä arvio käyttäjän kirjoitustaidosta
 - peliin mahdollisuus luoda ja kirjautua käyttäjällä, ja nähdä omat vanhat tulokset
