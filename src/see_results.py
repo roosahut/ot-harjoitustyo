@@ -16,13 +16,17 @@ class SeeResults:
     def draw_screen(self):
         self.display.fill(0)
 
-        y_pos = 15
+        info_text, xy_info = self.center_text(
+            "Results of the last 12 games played", 15)
+        self.display.blit(info_text, xy_info)
+
+        y_pos = 50
         for i in self.results:
             result_text, xy_result = self.center_text(
             f"{i[1]}, {i[2]} - Sentences: {i[3]} Time: {i[4]} s Accuracy: {i[5]} % WPM: {i[6]}", y_pos
             )
             self.display.blit(result_text, xy_result)
-            y_pos += 20
+            y_pos += 25
 
         pygame.draw.rect(
             self.display, (0, 0, 255), pygame.Rect(300, 390, 150, 100))

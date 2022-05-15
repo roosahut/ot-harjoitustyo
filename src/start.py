@@ -2,6 +2,7 @@ import sys
 import pygame
 from gameloop import GameLoop
 from speedtyping import SpeedTyping
+from see_results import SeeResults
 
 
 class Start:
@@ -44,9 +45,15 @@ class Start:
             "Select which difficulty mode you want to pick:", 250)
         self.display.blit(start_text, xy_start)
 
+        pygame.draw.rect(
+            self.display, (0, 0, 255), pygame.Rect(300, 420, 150, 60))
+        start_text, xy_start = self.center_text(
+            "See results", 450)
+        self.display.blit(start_text, xy_start)
+
     def draw_start_event(self):
         text, xy = self.center_text(
-            "You will have 40 seconds to write as many sentences as possible", 100)
+            "You will have 30 seconds to write as many sentences as possible", 100)
         self.display.blit(text, xy)
 
         start_text, xy_start = self.center_text(
@@ -81,6 +88,9 @@ class Start:
                 elif 400 <= x <= 500 and 300 <= y <= 400 and not self.mode_selected:
                     self.mode = 2
                     self.mode_selected = True
+                elif 300 <= x <= 450 and 420 <= y <= 480 and not self.mode_selected:
+                    prev_results = SeeResults(self.display)
+                    prev_results.see_results()
             elif event.type == pygame.KEYDOWN and self.mode_selected:
                 if event.key == pygame.K_BACKSPACE:
                     self.input_nickname = self.input_nickname[:-1]
