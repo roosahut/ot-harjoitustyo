@@ -27,3 +27,8 @@
 - lisätty testejä hieman
 - parannettu koodin rakennetta
 - lisätty docstring suurimpaan osaan luokista
+
+## Viikko 7
+- Luotu database ja tietokanta entisille pelituloksille.
+- Luotu see results ja gameover käytöliittymät.
+- Parannettu yleislookkia, lisätty testejä.
