@@ -47,3 +47,7 @@ Tämän jälkeen pelaajalle tulee näkymä, jossa hän näkee suorituksensa tulo
 Tuloksia pääsee katsomaan painamalla 'See results' -nappia, joka on pelin alussa, sekä pelin lopussa.
 Tulos-sivulla näkyvät edelliset 12 peliä sekä niiden tiedot.
 Tulos-sivulta pääsee myös aloittamaan uuden pelin.
+
+# Konfiguraatio
+
+Pysyväistallennukseen tarvittava database tiedosto on konfiguroitavissa .env -tiedostossa. Se luodaan myös automaattisesti sovelluksen pohjassa olevaan data -kansioon.
