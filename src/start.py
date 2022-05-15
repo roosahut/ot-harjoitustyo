@@ -25,6 +25,13 @@ class Start:
         pygame.display.flip()
 
     def draw_mode_selection(self):
+        info_text, xy_info = self.get_headline()
+        self.display.blit(info_text, xy_info)
+
+        info_text, xy_info = self.center_text(
+            "See who is the fastest typer in the friendgroup!", 100)
+        self.display.blit(info_text, xy_info)
+
         pygame.draw.rect(
             self.display, (0, 0, 255), pygame.Rect(250, 300, 100, 100))
         pygame.draw.rect(
@@ -34,18 +41,25 @@ class Start:
         hard_text = self.get_text("Hard")
         self.display.blit(hard_text, (425, 335))
         start_text, xy_start = self.center_text(
-            "Select which difficulty mode you want to pick!", 200)
+            "Select which difficulty mode you want to pick:", 250)
         self.display.blit(start_text, xy_start)
 
     def draw_start_event(self):
+        text, xy = self.center_text(
+            "You will have 40 seconds to write as many sentences as possible", 100)
+        self.display.blit(text, xy)
+
         start_text, xy_start = self.center_text(
-            "Start the game by giving your nickname and press the  blue button to start!", 150)
+            "Start the game by typing your nickname and press the blue button to start!", 150)
         self.display.blit(start_text, xy_start)
+
         error_text, xy_error = self.center_text(
-            "You can't begin unless the nickname is 4-10 characters long!", 200)
+            "You can't begin unless the nickname is 4-10 characters long!", 180)
         self.display.blit(error_text, xy_error)
+
         text_input, xy_text = self.center_text(self.input_nickname, 250)
         self.display.blit(text_input, xy_text)
+
         pygame.draw.rect(
             self.display, (0, 0, 255), pygame.Rect(325, 300, 100, 100))
 
@@ -72,6 +86,12 @@ class Start:
                     self.input_nickname = self.input_nickname[:-1]
                 else:
                     self.input_nickname += event.unicode
+
+    def get_headline(self):
+        font = pygame.font.SysFont("Times New Roman", 32)
+        txt = font.render('SPEED TYPING TEST', True, (255, 255, 255))
+        rect = txt.get_rect(center=(750/2, 50))
+        return txt, rect
 
     def center_text(self, text, y_position):
         font = pygame.font.SysFont("Times New Roman", 24)

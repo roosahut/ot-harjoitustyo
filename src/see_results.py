@@ -16,18 +16,32 @@ class SeeResults:
     def draw_screen(self):
         self.display.fill(0)
 
-        y_pos = 10
+        y_pos = 15
         for i in self.results:
             result_text, xy_result = self.center_text(
-            f"{i[1]}, {i[2]} Sentences: {i[3]} Time: {i[4]} s Accuracy: {i[5]} % WPM: {i[6]}", y_pos)
+            f"{i[1]}, {i[2]} - Sentences: {i[3]} Time: {i[4]} s Accuracy: {i[5]} % WPM: {i[6]}", y_pos
+            )
             self.display.blit(result_text, xy_result)
-            y_pos += 10
+            y_pos += 20
+
+        pygame.draw.rect(
+            self.display, (0, 0, 255), pygame.Rect(300, 390, 150, 100))
+        start_text, xy_start = self.center_text(
+            "New game", 435)
+        self.display.blit(start_text, xy_start)
+
         pygame.display.flip()
 
     def get_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                x, y = pygame.mouse.get_pos()  # pylint: disable=invalid-name
+                if 300 <= x <= 450 and 390 <= y <= 490:
+                    from start import Start
+                    new_game = Start(self.display)
+                    new_game.start()
 
     def center_text(self, text, y_position):
         font = pygame.font.SysFont("Times New Roman", 24)
@@ -35,7 +49,3 @@ class SeeResults:
         rect = txt.get_rect(center=(750/2, y_position))
         return txt, rect
 
-    def get_text(self, text):
-        font = pygame.font.SysFont("Times New Roman", 24)
-        txt = font.render(text, True, (255, 255, 255))
-        return txt

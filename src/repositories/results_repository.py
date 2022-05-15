@@ -1,5 +1,4 @@
 from database_connection import get_database_connection
-from entities.results import Results
 
 
 class ResultsRepository:
@@ -10,7 +9,8 @@ class ResultsRepository:
         cursor = self._connection.cursor()
         sql_insert_result = '''INSERT INTO results (nickname, mode, amount, time, accuracy, wpm)
         VALUES (?, ?, ?, ?, ?, ?)'''
-        cursor.execute(sql_insert_result, (result.nickname, result.mode, result.amount, result.time, result.accuracy, result.wpm))
+        cursor.execute(sql_insert_result, (result.nickname, result.mode,
+                       result.amount, result.time, result.accuracy, result.wpm))
         return result
 
     def get_results(self):

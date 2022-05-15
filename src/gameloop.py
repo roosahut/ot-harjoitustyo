@@ -46,7 +46,8 @@ class GameLoop:
                 if event.type == pygame.USEREVENT:
                     self.game_timer -= 1
                     if self.game_timer == 0:
-                        gameover = GameOver(self.display, self.results, self.nickname, self.difficulty_mode)
+                        gameover = GameOver(
+                            self.display, self.results, self.nickname, self.difficulty_mode)
                         gameover.gameover()
                 elif event.type == pygame.MOUSEBUTTONUP:
                     x, y = pygame.mouse.get_pos()  # pylint: disable=invalid-name
