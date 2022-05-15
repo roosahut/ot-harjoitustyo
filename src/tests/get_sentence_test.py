@@ -1,4 +1,4 @@
-from get_sentence import GetSentence
+from filereader.get_sentence import GetSentence
 import unittest
 
 

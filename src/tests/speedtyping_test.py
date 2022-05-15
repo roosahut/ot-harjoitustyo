@@ -1,4 +1,4 @@
-from speedtyping import SpeedTyping
+from services.speedtyping import SpeedTyping
 import unittest
 
 

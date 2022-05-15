@@ -1,5 +1,5 @@
 from surfaces.gameloop import GameLoop
-from speedtyping import SpeedTyping
+from services.speedtyping import SpeedTyping
 import unittest
 import pygame
 

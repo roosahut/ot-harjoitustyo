@@ -1,7 +1,7 @@
 import sys
 import pygame
 from surfaces.gameloop import GameLoop
-from speedtyping import SpeedTyping
+from services.speedtyping import SpeedTyping
 from surfaces.see_results import SeeResults
 
 
