@@ -1,4 +1,4 @@
-from gameover import GameOver
+from surfaces.gameover import GameOver
 import unittest
 import pygame
 

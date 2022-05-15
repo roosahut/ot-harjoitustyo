@@ -1,4 +1,4 @@
-from see_results import SeeResults
+from surfaces.see_results import SeeResults
 import unittest
 import pygame
 

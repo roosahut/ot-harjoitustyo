@@ -60,7 +60,7 @@ class SeeResults:
             if event.type == pygame.MOUSEBUTTONDOWN:
                 x, y = pygame.mouse.get_pos()  # pylint: disable=invalid-name
                 if 300 <= x <= 450 and 390 <= y <= 490:
-                    from start import Start
+                    from surfaces.start import Start
                     new_game = Start(self.display)
                     new_game.start()
 

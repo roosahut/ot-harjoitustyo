@@ -1,8 +1,8 @@
 import sys
 import pygame
-from gameloop import GameLoop
+from surfaces.gameloop import GameLoop
 from speedtyping import SpeedTyping
-from see_results import SeeResults
+from surfaces.see_results import SeeResults
 
 
 class Start:

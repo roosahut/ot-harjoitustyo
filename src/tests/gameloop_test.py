@@ -1,4 +1,4 @@
-from gameloop import GameLoop
+from surfaces.gameloop import GameLoop
 from speedtyping import SpeedTyping
 import unittest
 import pygame

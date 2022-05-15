@@ -1,7 +1,7 @@
 import time
 import sys
 import pygame
-from gameover import GameOver
+from surfaces.gameover import GameOver
 
 
 class GameLoop:
@@ -60,10 +60,11 @@ class GameLoop:
                 elif event.type == pygame.KEYDOWN:
                     if not self.end:
                         if event.key == pygame.K_RETURN:
-                            self.screen.end_time = time.time()
-                            self.screen.count_words()
-                            self.results.append(self.screen.results())
-                            self.end = True
+                            if len(self.screen.input) > 0:
+                                self.screen.end_time = time.time()
+                                self.screen.count_words()
+                                self.results.append(self.screen.results())
+                                self.end = True
                         elif event.key == pygame.K_BACKSPACE:
                             self.screen.input = self.screen.input[:-1]
                         else:

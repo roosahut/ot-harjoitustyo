@@ -1,5 +1,5 @@
 import pygame
-from start import Start
+from surfaces.start import Start
 
 
 def main():
