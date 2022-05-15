@@ -18,4 +18,7 @@
 | 3.5           | 7             | poetryn korjaaminen                |
 |               | 2             | vaikeustasojen luominen peliin     |
 |               | 2             | testien ja docstring lisäystä      |
-| yht           | 30.5          |
+| 14.5          | 4             | Luotu gameover käyttöliittymä      |
+| 15.5          | 14            | databasen luonti, testien lisäys,  |
+|               |               | koodin laatu ja dokumentaatio
+| yht           | 48.5          |
