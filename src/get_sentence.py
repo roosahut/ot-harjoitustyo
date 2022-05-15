@@ -1,8 +1,5 @@
 import random
 
-# Minulla on tarkoitus muuttaa tätä, niinkuin ohjaaja minua kehotti,
-# mutta valitettavasti en kerennyt tätä tehdä vielä :(
-
 
 class GetSentence:
     """Luokka, joka hakee kansioista lauseen randomilla.

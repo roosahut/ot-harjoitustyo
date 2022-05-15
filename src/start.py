@@ -6,18 +6,36 @@ from see_results import SeeResults
 
 
 class Start:
+    """Luokka, josta peli avautuu, ja josta pääsee aloittamaan uuden pelin.
+
+    Attributes:
+        display: Pygame näkymä.
+        mode: Pelin haluttu vaikeustaso.
+        mode_selected: Määrittää onko vaikeustaso jo valittu.
+        input_nickname: Käyttäjän antama lempinimi.
+    """
+
     def __init__(self, display):
+        """Luokan konstruktori.
+
+        Args:
+            display: Pygame näkymä.
+        """
         self.display = display
         self.mode = 0
         self.mode_selected = False
         self.input_nickname = ''
 
     def start(self):
+        """Pygamen looppi, joka kerää pelaajan tapahtumat ja piirtää näytön.
+        """
         while True:
             self.draw_screen()
             self.get_events()
 
     def draw_screen(self):
+        """Pygamen näytön piirtäjä, piirtää näytön riippuen sitä, onko vaikeustaso jo valittu.
+        """
         self.display.fill(0)
         if not self.mode_selected:
             self.draw_mode_selection()
@@ -26,6 +44,8 @@ class Start:
         pygame.display.flip()
 
     def draw_mode_selection(self):
+        """Piirtää näkymän alusta, jolloin vaikeustaso pitää valita.
+        """
         font = pygame.font.SysFont("Times New Roman", 24)
 
         info_text, xy_info = self.get_headline()
@@ -54,6 +74,8 @@ class Start:
         self.display.blit(start_text, xy_start)
 
     def draw_start_event(self):
+        """Piirtää näkymän, kun vaikeustaso on valittu, ja pitää antaa lempinimi.
+        """
         text, xy_text = self.center_text(
             "You will have 30 seconds to write as many sentences as possible", 100)
         self.display.blit(text, xy_text)
@@ -73,6 +95,8 @@ class Start:
             self.display, (0, 0, 255), pygame.Rect(325, 300, 100, 100))
 
     def get_events(self):
+        """Pygamen keräämät tapahtumat pelaajalta, ja niiden seuraukset.
+        """
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
@@ -100,12 +124,26 @@ class Start:
                     self.input_nickname += event.unicode
 
     def get_headline(self):
+        """Tuottaa pelin otsikon.
+
+        Returns:
+            Palauttaa tekstin pygame-muodossa sekä sen sijainnin.
+        """
         font = pygame.font.SysFont("Times New Roman", 32)
         txt = font.render('SPEED TYPING TEST', True, (255, 255, 255))
         rect = txt.get_rect(center=(750/2, 50))
         return txt, rect
 
     def center_text(self, text, y_position):
+        """Tuottaa halutun keskitetyn tekstin.
+
+        Args:
+            text: Haluttu teksti.
+            y_position: Halutun tekstin y-positio.
+
+        Returns:
+            Palauttaa halutun tekstin pygame-muodossa sekä sen koordinaatit.
+        """
         font = pygame.font.SysFont("Times New Roman", 24)
         txt = font.render(text, True, (255, 255, 255))
         rect = txt.get_rect(center=(750/2, y_position))

@@ -31,7 +31,7 @@ class SpeedTyping:
         kuinka monta sanaa hän kirjoitti minuutissa.
 
         Returns:
-            Palauttaa testin tulokset, jotka ilmestyvät peli ruudulle.
+            Palauttaa yhden lauseen tulokset listamuodossa.
         """
         timer = self.end_time - self.start_time
         input_counter = 0
@@ -46,6 +46,11 @@ class SpeedTyping:
         return [round(timer, 1), round(accuracy), round(wpm)]
 
     def results_sentence(self):
+        """Ilmoittaa tuloksen lausemuodossa.
+
+        Returns:
+            Tulokset muotoiltuna lauseena.
+        """
         result = self.results()
         return f"Time: {result[0]} s  Accuracy: {result[1]} %  WPM: {result[2]}"
 
