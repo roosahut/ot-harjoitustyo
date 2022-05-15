@@ -1,13 +1,17 @@
 # Speed Typing Test
 
-Sovelluksen tarkoituksena on testata pelaajan kirjoitusnopeutta ja -tarkkuutta.
+Sovelluksen tarkoituksena on testata pelaajan kirjoitusnopeutta ja -tarkkuutta. Pelaajalla on 40 sekuntia aikka kirjoittaa niin monta lausetta, kuin hän kerkeää.
 
 ## Sovelluksen käynnistys
 1. riippuvuudet komennolla
 ```
 poetry install
 ```
-2. käynnistä sovellus
+2. alustustoimenpiteiden suorittaminen:
+```
+poetry run invoke build
+```
+4. käynnistä sovellus
 ```
 poetry run invoke start
 ```
@@ -41,8 +45,4 @@ poetry run invoke lint
 
 [käyttöohje](https://github.com/roosahut/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
-## Releaset
-
-[viikon 5 release](https://github.com/roosahut/ot-harjoitustyo/releases/tag/viikko5)
-
-[viikon 6 release](https://github.com/roosahut/ot-harjoitustyo/releases/tag/viikko6)
+[testausdokumentaatio](https://github.com/roosahut/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
