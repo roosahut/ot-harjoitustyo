@@ -77,7 +77,7 @@ class Start:
         """Piirtää näkymän, kun vaikeustaso on valittu, ja pitää antaa lempinimi.
         """
         text, xy_text = self.center_text(
-            "You will have 30 seconds to write as many sentences as possible", 100)
+            "You will have 40 seconds to write as many sentences as possible", 100)
         self.display.blit(text, xy_text)
 
         start_text, xy_start = self.center_text(

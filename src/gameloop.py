@@ -37,7 +37,7 @@ class GameLoop:
         self.mode = (0)
         self.text_colour = (255, 255, 255)
         self.end = False
-        self.game_timer = 30
+        self.game_timer = 40
         self.results = []
 
     def loop(self):
