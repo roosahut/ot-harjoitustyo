@@ -11,10 +11,13 @@ class GameLoop:
         clock: Pygamen ajastin.
         screen: SpeedTyping-luokassa pohja kirjoitukselle ja tuloksille
         display: Pygame näkymä.
+        nickname: Pelaajan antama lempinimi kyseiselle pellile.
+        difficulty_mode: Pelaajan valitsema vaikeustaso.
         mode: Pygamen näkymän taustaväri.
         text_colour: Pygamen näkymän tekstin väri.
         end: Onko yhden lauseen kirjoitus lopetettu vai ei.
         game_timer: Aika sekunneissa, joka pelaajalla on kirjoittaa lauseita. Vähenee kokoajan.
+        results: pelaajan kirjoittamien lauseiden tulokset.
     """
 
     def __init__(self, screen, display, nickname, difficulty):
@@ -23,6 +26,8 @@ class GameLoop:
         Args:
             screen: SpeedTyping-luokassa pohja kirjoitukselle ja tuloksille.
             display: Pygame näkymä
+            nickname: Pelaajan antama lempinimi kyseiselle pellile.
+            difficulty: Pelaajan valitsema vaikeustaso.
         """
         self.pygame_clock = pygame.time.Clock()
         self.screen = screen

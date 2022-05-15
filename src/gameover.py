@@ -37,7 +37,7 @@ class GameOver:
         self.display.blit(result_text, xy_result)
 
         info_text, xy_info = self.center_text(
-            f'Challenge a friend or play again by pressing new game', 200)
+            'Challenge a friend or play again by pressing new game', 200)
         self.display.blit(info_text, xy_info)
 
         pygame.draw.rect(
@@ -71,8 +71,7 @@ class GameOver:
     def get_difficulty_in_str(self):
         if self.difficulty == 1:
             return 'Normal'
-        elif self.difficulty == 2:
-            return 'Hard'
+        return 'Hard'
 
     def get_average_results(self):
         time = 0

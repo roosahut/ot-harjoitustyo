@@ -23,8 +23,8 @@ class SeeResults:
         y_pos = 50
         for i in self.results:
             result_text, xy_result = self.center_text(
-            f"{i[1]}, {i[2]} - Sentences: {i[3]} Time: {i[4]} s Accuracy: {i[5]} % WPM: {i[6]}", y_pos
-            )
+                f"{i[1]}, {i[2]} - Sentences: {i[3]} Time: {i[4]} s Accuracy: {i[5]} % WPM: {i[6]}"
+                , y_pos)
             self.display.blit(result_text, xy_result)
             y_pos += 25
 
@@ -52,4 +52,3 @@ class SeeResults:
         txt = font.render(text, True, (255, 255, 255))
         rect = txt.get_rect(center=(750/2, y_position))
         return txt, rect
-

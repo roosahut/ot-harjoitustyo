@@ -16,3 +16,10 @@ class TestGetSentence(unittest.TestCase):
         rect = txt.get_rect(center=(750/2, 25)) 
         test = self.screen.center_text('moi', 25)
         self.assertIn(rect, test)
+
+    def test_get_headline(self):
+        font = pygame.font.SysFont("Times New Roman", 32) 
+        txt = font.render('SPEED TYPING TEST', True, (255, 255, 255)) 
+        rect = txt.get_rect(center=(750/2, 50))
+        test = self.screen.get_headline()
+        self.assertIn(rect, test)

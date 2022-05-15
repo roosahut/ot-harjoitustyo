@@ -9,7 +9,7 @@ class TestGetSentence(unittest.TestCase):
         pygame.init()
         display = pygame.display.set_mode((750, 500))
         screen = SpeedTyping(1)
-        self.screen = GameLoop(screen, display)
+        self.screen = GameLoop(screen, display, 'pate', 1)
 
     def test_center_text(self):
         self.screen.text_colour = (255, 255, 255)
@@ -23,7 +23,7 @@ class TestGetSentence(unittest.TestCase):
         pygame.init()
         display = pygame.display.set_mode((750, 500))
         screen = SpeedTyping(1)
-        test_screen = GameLoop(screen, display)
+        test_screen = GameLoop(screen, display, 'pate', 1)
         test_screen.mode = (0)
         test_screen.change_mode()
         self.screen.change_mode()
@@ -34,7 +34,7 @@ class TestGetSentence(unittest.TestCase):
         pygame.init()
         display = pygame.display.set_mode((750, 500))
         screen = SpeedTyping(1)
-        test_screen = GameLoop(screen, display)
+        test_screen = GameLoop(screen, display, 'pate', 1)
         test_screen.mode = (255, 255, 255)
         test_screen.change_mode()
         self.screen.change_mode()

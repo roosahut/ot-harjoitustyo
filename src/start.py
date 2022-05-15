@@ -26,6 +26,8 @@ class Start:
         pygame.display.flip()
 
     def draw_mode_selection(self):
+        font = pygame.font.SysFont("Times New Roman", 24)
+
         info_text, xy_info = self.get_headline()
         self.display.blit(info_text, xy_info)
 
@@ -37,9 +39,9 @@ class Start:
             self.display, (0, 0, 255), pygame.Rect(250, 300, 100, 100))
         pygame.draw.rect(
             self.display, (0, 0, 255), pygame.Rect(400, 300, 100, 100))
-        normal_text = self.get_text("Normal")
+        normal_text = font.render('Normal', True, (255, 255, 255))
         self.display.blit(normal_text, (265, 335))
-        hard_text = self.get_text("Hard")
+        hard_text = font.render('Hard', True, (255, 255, 255))
         self.display.blit(hard_text, (425, 335))
         start_text, xy_start = self.center_text(
             "Select which difficulty mode you want to pick:", 250)
@@ -52,9 +54,9 @@ class Start:
         self.display.blit(start_text, xy_start)
 
     def draw_start_event(self):
-        text, xy = self.center_text(
+        text, xy_text = self.center_text(
             "You will have 30 seconds to write as many sentences as possible", 100)
-        self.display.blit(text, xy)
+        self.display.blit(text, xy_text)
 
         start_text, xy_start = self.center_text(
             "Start the game by typing your nickname and press the blue button to start!", 150)
@@ -108,8 +110,3 @@ class Start:
         txt = font.render(text, True, (255, 255, 255))
         rect = txt.get_rect(center=(750/2, y_position))
         return txt, rect
-
-    def get_text(self, text):
-        font = pygame.font.SysFont("Times New Roman", 24)
-        txt = font.render(text, True, (255, 255, 255))
-        return txt
