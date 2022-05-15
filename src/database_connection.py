@@ -1,0 +1,9 @@
+from config import DATABASE_FILE_PATH
+import sqlite3
+
+connect = sqlite3.connect(DATABASE_FILE_PATH)
+connect.row_factory = sqlite3.Row
+
+def get_database_connection():
+    return connect
+

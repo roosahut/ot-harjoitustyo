@@ -6,3 +6,4 @@ htmlcov
 .DS_Store
 *.py[cod]
 *$py.class
+data/database.sqlite

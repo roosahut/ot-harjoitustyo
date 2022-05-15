@@ -17,7 +17,7 @@ class GameLoop:
         game_timer: Aika sekunneissa, joka pelaajalla on kirjoittaa lauseita. Vähenee kokoajan.
     """
 
-    def __init__(self, screen, display):
+    def __init__(self, screen, display, nickname, difficulty):
         """Luokan konstruktori, joka määrää pelin näkymän.
 
         Args:
@@ -27,10 +27,12 @@ class GameLoop:
         self.pygame_clock = pygame.time.Clock()
         self.screen = screen
         self.display = display
+        self.nickname = nickname
+        self.difficulty_mode = difficulty
         self.mode = (0)
         self.text_colour = (255, 255, 255)
         self.end = False
-        self.game_timer = 60
+        self.game_timer = 20
         self.results = []
 
     def loop(self):
@@ -44,7 +46,7 @@ class GameLoop:
                 if event.type == pygame.USEREVENT:
                     self.game_timer -= 1
                     if self.game_timer == 0:
-                        gameover = GameOver(self.display, self.results)
+                        gameover = GameOver(self.display, self.results, self.nickname, self.difficulty_mode)
                         gameover.gameover()
                 elif event.type == pygame.MOUSEBUTTONUP:
                     x, y = pygame.mouse.get_pos()  # pylint: disable=invalid-name
@@ -82,8 +84,8 @@ class GameLoop:
         sentence_input, xy_sentence = self.center_text(
             self.screen.sentence, 175)
         self.display.blit(sentence_input, xy_sentence)
-        text_input, xy_text = self.center_text(self.screen.input, 250)
 
+        text_input, xy_text = self.center_text(self.screen.input, 250)
         self.display.blit(text_input, xy_text)
 
         if self.end is False:

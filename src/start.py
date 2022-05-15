@@ -9,6 +9,7 @@ class Start:
         self.display = display
         self.mode = 0
         self.mode_selected = False
+        self.input_nickname = ''
 
     def start(self):
         while True:
@@ -38,8 +39,13 @@ class Start:
 
     def draw_start_event(self):
         start_text, xy_start = self.center_text(
-            "Start the game by pressing the blue button!", 200)
+            "Start the game by giving your nickname and press the  blue button to start!", 150)
         self.display.blit(start_text, xy_start)
+        error_text, xy_error = self.center_text(
+            "You can't begin unless the nickname is 4-10 characters long!", 200)
+        self.display.blit(error_text, xy_error)
+        text_input, xy_text = self.center_text(self.input_nickname, 250)
+        self.display.blit(text_input, xy_text)
         pygame.draw.rect(
             self.display, (0, 0, 255), pygame.Rect(325, 300, 100, 100))
 
@@ -50,15 +56,22 @@ class Start:
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 x, y = pygame.mouse.get_pos()  # pylint: disable=invalid-name
                 if 325 <= x <= 425 and 300 <= y <= 400 and self.mode_selected:
-                    screen = SpeedTyping(self.mode)
-                    play = GameLoop(screen, self.display)
-                    play.loop()
+                    if 4 <= len(self.input_nickname) <= 10:
+                        screen = SpeedTyping(self.mode)
+                        play = GameLoop(screen, self.display,
+                                        self.input_nickname, self.mode)
+                        play.loop()
                 if 250 <= x <= 350 and 300 <= y <= 400 and not self.mode_selected:
                     self.mode = 1
                     self.mode_selected = True
                 elif 400 <= x <= 500 and 300 <= y <= 400 and not self.mode_selected:
                     self.mode = 2
                     self.mode_selected = True
+            elif event.type == pygame.KEYDOWN and self.mode_selected:
+                if event.key == pygame.K_BACKSPACE:
+                    self.input_nickname = self.input_nickname[:-1]
+                else:
+                    self.input_nickname += event.unicode
 
     def center_text(self, text, y_position):
         font = pygame.font.SysFont("Times New Roman", 24)
